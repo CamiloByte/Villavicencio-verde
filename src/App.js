@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import HomePage from './HomePage';
+import RegistroResiduos from './RegistroResiduos'; 
+import EducacionAmbiental from './EducacionAmbiental'; 
+import IniciarSesion from './IniciarSesion';
+import UserPage from './UserPage';
+import Registro from './Registro'; 
+import Contacto from './Contacto';   // Importa la nueva página
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/registro-residuos" element={<RegistroResiduos />} />
+        <Route path="/EducacionAmbiental" element={<EducacionAmbiental />} />
+        <Route path="/iniciar-sesion" element={<IniciarSesion/>} />
+        <Route path="/registro" element={<Registro />} />
+        <Route path="/usuario" element={<UserPage />} />
+        <Route path="/Contacto" element={<Contacto />} />
+
+
+
+      </Routes>
+    </Router>
   );
 }
 
 export default App;
+
+
